@@ -1,13 +1,17 @@
+//Simulador de compras online.
+
 let nombre = prompt("Hola! por favor, ingresa tu nombre y continuemos con la compra:");
 let ingresarProductos = parseInt(prompt(`Hola ${nombre}! Gracias por ingresar a nuestra web. Por favor,ingresa los productos que deseas adquirir:\n 1-Zapatillas = $ 18.000\n 2-Remera Stich = $ 8.500\n 3-Jean fluor = $ 7.700\n 4-Buzo negro = $ 7.300\n 0-Total y salir`));
 let ingresarCantidad;
 let total = 0;
 
+//Funcion para registrar la cantidad solicitada * Precio de cada producto.
 
 const cantidad = (cant, precio) => {
     return cant * precio;
 }
 
+//Selección de productos a traves de bucle WHILE, hasta que se ingrese la tecla 0 para finalizar el registro de compras.
 
 while (ingresarProductos != 0){
     switch(ingresarProductos){
@@ -44,9 +48,13 @@ while (ingresarProductos != 0){
             break;
     }
 
+//Cada vez que ingresamos un producto nuevo, repetimos la misma información brindada al cliente.
+
     ingresarProductos = parseInt(prompt(`Hola ${nombre}! Gracias por ingresar a nuestra web. Por favor,ingresa los productos que deseas adquirir:\n 1-Zapatillas = $ 18.000\n 2-Remera Stich = $ 8.500\n 3-Jean fluor = $ 7.700\n 4-Buzo negro = $ 7.300\n 0-Total y salir`));
 
 }
+
+//Tanto el cliente como el vendedor internamente pueden llevar el registro de la compra realizada.
 
 console.log("Total de compra: " + total);
 alert (`${nombre}, el total de tu compra es: $ ` + total  + `.\n` + ` Gracias. Volvé pronto!`);
